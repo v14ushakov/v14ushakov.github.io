@@ -2,66 +2,43 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-    <meta name="author" content="Vasili Ushakov">
-    <title>Василий Ушаков - о периметре</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-		<script src="perimeter.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <title>Bootstrap 101 Template</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
 
-    <style>
+		<style>
 			* {
-				padding: 0;
-				marging: 0;
+				text-align: center;
 			}
+		</style>
 
-      svg {
-        display: block;
-        margin: auto;
-        fill: #337AB7;
-      }
+		<script>
+			function calctriangle() {
+				document.triangle.result.value=parseInt(document.triangle.lengtha.value) + parseInt(document.triangle.lengthb.value) + parseInt(document.triangle.lengthc.value);
+			 }
 
-      .rect {
-        margin: auto;
-      }
+			 function calcsquare() {
+				document.square.result.value=4 * (document.square.length.value);
+ 			 }
+ 
+			 function calcrectangle() {
+				document.rectangle.result.value=parseInt(2 * (document.rectangle.base.value)) +  parseInt(2 *(document.rectangle.height.value));
+ 			}
 
-      .jumbotron {
-        text-align: center;
-      }
-    </style>
-
+		</script>
   </head>
 
   <body>
+		<div class="container">
+			<div class="row">
 
-    <nav class="navbar navbar-inverse ">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">о периметре фигур</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">главная</a></li>
-            <li class="active" ><a href="perimeter.html">вычисление периметра квадрата</a></li>
-						<li ><a href="instruction.html">Инструкция</a></li>
-						<li ><a href="docs.html">Справочник</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+<h1>
+Вычисление периметра фигур
+</h1>
 
-    <div class="container">
-
-<ol class="breadcrumb">
-  <li class="active"><span class="label label-warning">Василий Ушаков</span></li>
+<ol style="margin-top: 2vh" class="breadcrumb">
+  <li class="active"><span class="label label-primary">Василий Ушаков</span></li>
 </ol>
 
 <hr />
@@ -79,10 +56,10 @@
           <label>периметр</label>
 					<input class="form-control" name="result" SIZE="8" maxlength="24" >
         </div>
-      </form>
 
-			<input class="btn btn-warning" type=Button value=Вычислить onClick="calcsquare();">
-			<input class="btn btn-warning" type="reset" value="Очистить" >
+			<input class="btn btn-primary" type=Button value=Вычислить onClick="calcsquare();">
+			<input class="btn btn-primary"  type="reset" value="Очистить" >
+      </form>
 			<br />
 	</div>
 </div>
@@ -101,8 +78,8 @@
 					<input class="form-control" name="height" size="7" maxlength="15"  onFocus="select();"/>
         </div>
 
-			<input class="btn btn-warning"  type=Button value=Вычислить onClick="calcrectangle();">
-			<input class="btn btn-warning"  type="reset" value="Очистить" >
+			<input class="btn btn-primary"  type=Button value=Вычислить onClick="calcrectangle();">
+			<input class="btn btn-primary"  type="reset" value="Очистить" >
 			<br />
 			<br />
 			<input class="form-control" name="result" SIZE="8" maxlength="24" >
@@ -131,8 +108,8 @@
 				<br />
         </div>
 
-						<input class="btn btn-warning"  type=Button  onClick="calctriangle();" value=Вычислить>
-						<input class="btn btn-warning"  type="reset" value="Очистить">
+						<input class="btn btn-primary"  type=Button  onClick="calctriangle();" value=Вычислить>
+						<input class="btn btn-primary"  type="reset" value="Очистить">
 				<br />
 						<br />
         <div class="col-md-4" class="form-group">
@@ -144,3 +121,14 @@
 			<br />
 	</form>
 </div>
+
+			</div>
+		</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+  </body>
+</html>
