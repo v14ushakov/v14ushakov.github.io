@@ -13,8 +13,13 @@
  |
  */
 module.exports = {
-		"ui": false,
-    "files": ".",
+    "ui": {
+        "port": 3001,
+        "weinre": {
+            "port": 8080
+        }
+    },
+    "files": "*",
     "watchOptions": {},
     "server": ".",
     "proxy": false,
@@ -49,11 +54,13 @@ module.exports = {
     "scrollElementMapping": [],
     "reloadDelay": 0,
     "reloadDebounce": 0,
+    "reloadThrottle": 0,
     "plugins": [],
     "injectChanges": true,
     "startPath": null,
     "minify": true,
     "host": null,
+    "localOnly": false,
     "codeSync": true,
     "timestamps": true,
     "clientEvents": [

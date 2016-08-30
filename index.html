@@ -1,183 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Василий Ушаков | периметр фигур</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf8">
 
-		<style>
-			* {
-				text-align: center;
-			}
-		</style>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+	</head>
 
-		<script>
-			function calctriangle() {
-				document
-					.triangle
-						.result
-							.value =
-								parseInt(
-										document.
-											triangle
-												.lengtha
-													.value
-								) + 
-								parseInt(
-									document
-										.triangle
-											.lengthb
-												.value
-								) +
-								parseInt(
-									document
-										.triangle
-											.lengthc
-												.value
-								) ;
-			 }
-
-			 function calcsquare() {
-				document
-					.square
-						.result
-							.value = 
-								4 * (
-											document
-												.square
-													.length
-														.value
-										);
- 			 }
- 
-			 function calcrectangle() {
-				document
-					.rectangle
-						.result
-							.value = 
-								parseInt (
-									2 * (
-										document
-											.rectangle
-												.base
-													.value
-									)
-								) + 
-								parseInt (
-									2 *(
-										document
-											.rectangle
-												.height
-													.value
-									)
-								);
- 			}
-
-		</script>
-  </head>
-
-  <body>
+	<body>
 		<div class="container">
+
 			<div class="row">
 
-<h1>
-Вычисление периметра фигур
-</h1>
+				<h1>
+					Perimeter calculating examples:
+					<small data-toggle="modal" data-target="#myModal">by Vasili Ushakov
+						<i class="fa fa-external-link" aria-hidden="true"></i>
+					</small>
+				</h1>
+				<hr>
 
-<ol style="margin-top: 2vh" class="breadcrumb">
-  <li class="active"><span class="label label-primary">Василий Ушаков</span></li>
-</ol>
+				<div class="col-md-6 ">
+					<div class="panel panel-default">
 
-<hr />
+						<div class="panel-heading">
+							Calculating of square perimeter
+							<span class="label label-default">p = 4 * a</span>
+						</div>
 
-<div class="jumbotron">
-	<div class="raw">
-		<h2>Периметр квадрата</h2>
-      <form name="square" class="form-inline">
-        <div class="col-md-6" class="form-group">
-          <label>длина стороны</label>
-					<input class="form-control" name="length" size="7" maxlength="15"  onFocus="select();" />
-        </div>
+						<div class="panel-body">
+							<form class="form-inline" name="square">
+								<div class="form-group">
+									<label>Value:</label>
+									<input class="form-control" placeholder="square side length:" type="text" name="a">
+									<button type='button' class="btn btn-default" onclick='squarePerimeter("square", "a", "squarePerimeter")'>Calculate perimeter:</button>
+									<button type="reset" class="btn btn-default" onclick='clearForm("squarePerimeter")'>Clear</button>
+								</div>
+							</form>
+						</div> <!--panel-body end-->
 
-        <div class="col-md-6" class="form-group">
-          <label>периметр</label>
-					<input class="form-control" name="result" SIZE="8" maxlength="24" >
-        </div>
+						<div class="panel-footer">
+							<span id="squarePerimeter"></span>
+						</div>
 
-			<input class="btn btn-primary" type=Button value=Вычислить onClick="calcsquare();">
-			<input class="btn btn-primary"  type="reset" value="Очистить" >
-      </form>
-			<br />
+					</div><!--panel end-->
+				</div>
+
+
+
+					<div class="col-md-6 ">
+						<div class="panel panel-default">
+
+							<div class="panel-heading">
+								Calculating of rectangle perimeter
+								<span class="label label-default">p = (a + b) * 2</span>
+							</div>
+
+							<div class="panel-body">
+								<form class="form-inline" name="rectangle">
+									<div class="form-group">
+										<label>First rectangle side "a" length:</label>
+										<input class="form-control" placeholder="a side length:" type="text" name="a">
+										<br />
+										<br />
+
+										<label>Second rectangle side "b" length:</label>
+										<input class="form-control" placeholder="b side length:" type="text" name="b">
+
+										<br />
+										<button type='button' class="btn btn-default" onclick='rectanglePerimeter()'>Calculate perimeter:</button>
+										<button type="reset" class="btn btn-default" onclick='clearForm("rectanglePerimeter")'>Clear</button>
+									</div>
+								</form>
+							</div> <!--panel-body end-->
+
+							<div class="panel-footer">
+								<span id="rectanglePerimeter"></span>
+							</div>
+
+						</div><!--panel end-->
+
+					</div><!--column end-->
+
+				</div><!-- row class end-->
+
+			</div> <!-- container class end-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog modal-content">
+
+		<div class="modal-header">
+			<h4 class="modal-title">Modal title</h4>
+		</div>
+
+		<div class="modal-body">
+			<i class="fa fa-camera-retro"></i>
+			<i class="fa fa-github-alt"></i>
+			<i class="fa fa-skype" ></i>
+			<i class="fa fa-google-plus" ></i>
+		</div>
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+
 	</div>
 </div>
 
-<div class="jumbotron">
-	<div class="raw">
-		<h2>Периметр прямоугольника</h2>
-      <form name="rectangle" class="form-inline">
-        <div class="col-md-6" class="form-group">
-          <label>длина</label>
-					<input class="form-control" name="base" size="7" maxlength="15"  onFocus="select();"/>
-				</div>
+			<script src="jquery.min.js"></script>
+			<script src="bootstrap.min.js"></script>
 
-        <div class="col-md-6" class="form-group">
-          <label>ширина</label>
-					<input class="form-control" name="height" size="7" maxlength="15"  onFocus="select();"/>
-        </div>
+			<script>
+function isNumeric(n) {
+	return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
-			<input class="btn btn-primary"  type=Button value=Вычислить onClick="calcrectangle();">
-			<input class="btn btn-primary"  type="reset" value="Очистить" >
-			<br />
-			<br />
-			<input class="form-control" name="result" SIZE="8" maxlength="24" >
-      </form>
-</div>
-</div>
+function validateForm(formName, inputName, elementId) {
+	var enteredValue = document.forms[formName][inputName].value;
+	if (isNumeric(enteredValue) == false) {
+		document.getElementById(elementId).innerHTML = '<span class="label label-danger">Error!</span> <span>form incorrectly filled</span>';
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 
-<div class="jumbotron">
-	<form name="triangle">
-		<h2>Периметр треугольника</h2>
+function squarePerimeter() {
+	if (validateForm("square", "a", "squarePerimeter") == true) {
+		var a = getInputValue("square", "a");
+		document.getElementById("squarePerimeter").innerHTML = '<span class="label label-success">perimeter</span> is equal <code>' + Number(a) * 4 + '</code>';
+	}
+}
 
-      <form name="triangle" class="form-inline">
-        <div class="col-md-4" class="form-group">
-          <label>длина стороны a</label>
-          <input class="form-control" name="lengtha" size="7" maxlength="15" onFocus="select();"/>
-				</div>
+function getInputValue(formName, inputName) {
+	return document.forms[formName][inputName].value;
+}
 
-        <div class="col-md-4" class="form-group">
-          <label>длина стороны b</label>
-          <input class="form-control" type="text" name="lengthb"  size="7" maxlength="15" onFocus="select();" />
-        </div>
+function rectanglePerimeter() {
+	if (validateForm("rectangle", "a", "rectanglePerimeter") == true) {
+		if(validateForm("rectangle", "b", "rectanglePerimeter") == true) {
+			var a = getInputValue("rectangle", "a");
+			var b = getInputValue("rectangle", "b");
+			document.getElementById("rectanglePerimeter").innerHTML = '<span class="label label-success">perimeter</span> is equal <code>' + (Number(a) + Number(b)) * 2 + '</code>';
+		}
+	}
+}
 
-        <div class="col-md-4" class="form-group">
-          <label>длина стороны c</label>
-          <input class="form-control" type="text" name="lengthc"  size="7" maxlength="15" onFocus="select();" />
-				<br />
-        </div>
+function clearForm(elementId) {
+	document.getElementById(elementId).innerHTML = '';
+}
+			</script>
 
-						<input class="btn btn-primary"  type=Button  onClick="calctriangle();" value=Вычислить>
-						<input class="btn btn-primary"  type="reset" value="Очистить">
-				<br />
-						<br />
-        <div class="col-md-4" class="form-group">
-				</div>
-        <div class="col-md-4" class="form-group">
-						<input class="form-control" type="text" name="result" SIZE="8" maxlength="24" >
-				</div>
-			<br />
-			<br />
-	</form>
-</div>
+	</body>
 
-			</div>
-		</div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="jquery.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap.min.js"></script>
-  </body>
 </html>
