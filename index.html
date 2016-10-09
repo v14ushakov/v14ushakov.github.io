@@ -16,8 +16,8 @@
 			<div class="row">
 
 				<h1>
-					Perimeter calculating examples:
-					<small data-toggle="modal" data-target="#myModal">by Vasili Ushakov
+					Примеры вычисления периметров:
+					<small data-toggle="modal" data-target="#myModal">Автор Ушаков Василий
 						<i class="fa fa-external-link" aria-hidden="true"></i>
 					</small>
 				</h1>
@@ -27,17 +27,17 @@
 					<div class="panel panel-default">
 
 						<div class="panel-heading">
-							Calculating of square perimeter
+							Калькулятор периметра квадрата
 							<span class="label label-default">p = 4 * a</span>
 						</div>
 
 						<div class="panel-body">
 							<form class="form-inline" name="square">
 								<div class="form-group">
-									<label>Value:</label>
-									<input class="form-control" placeholder="square side length:" type="text" name="a">
-									<button type='button' class="btn btn-default" onclick='squarePerimeter("square", "a", "squarePerimeter")'>Calculate perimeter:</button>
-									<button type="reset" class="btn btn-default" onclick='clearForm("squarePerimeter")'>Clear</button>
+									<label>длина стороны:</label>
+									<input class="form-control" placeholder="значение:" type="text" name="a">
+									<button type='button' class="btn btn-default" onclick='squarePerimeter("square", "a", "squarePerimeter")'>Вычислить:</button>
+									<button type="reset" class="btn btn-default" onclick='clearForm("squarePerimeter")'>Очистить:</button>
 								</div>
 							</form>
 						</div> <!--panel-body end-->
@@ -55,24 +55,24 @@
 						<div class="panel panel-default">
 
 							<div class="panel-heading">
-								Calculating of rectangle perimeter
+								Калькулятор периметра прямоугольника
 								<span class="label label-default">p = (a + b) * 2</span>
 							</div>
 
 							<div class="panel-body">
 								<form class="form-inline" name="rectangle">
 									<div class="form-group">
-										<label>First rectangle side "a" length:</label>
-										<input class="form-control" placeholder="a side length:" type="text" name="a">
+										<label>Длина прямоугольника:</label>
+										<input class="form-control" placeholder="значение:" type="text" name="a">
 										<br />
 										<br />
 
-										<label>Second rectangle side "b" length:</label>
-										<input class="form-control" placeholder="b side length:" type="text" name="b">
+										<label>Ширина прямоугольника:</label>
+										<input class="form-control" placeholder="значение:" type="text" name="b">
 
 										<br />
-										<button type='button' class="btn btn-default" onclick='rectanglePerimeter()'>Calculate perimeter:</button>
-										<button type="reset" class="btn btn-default" onclick='clearForm("rectanglePerimeter")'>Clear</button>
+										<button type='button' class="btn btn-default" onclick='rectanglePerimeter()'>Вычислить:</button>
+										<button type="reset" class="btn btn-default" onclick='clearForm("rectanglePerimeter")'>Очистить:</button>
 									</div>
 								</form>
 							</div> <!--panel-body end-->
@@ -94,14 +94,12 @@
 	<div class="modal-dialog modal-content">
 
 		<div class="modal-header">
-			<h4 class="modal-title">Modal title</h4>
+			<h4 class="modal-title">О себе.</h4>
 		</div>
 
 		<div class="modal-body">
-			<i class="fa fa-camera-retro"></i>
-			<i class="fa fa-github-alt"></i>
-			<i class="fa fa-skype" ></i>
-			<i class="fa fa-google-plus" ></i>
+			<p>Меня зовут Василий Ушаков Сергеевич.<br/>Этому калькулятору посвещена блогодарность семье Ушаковых.<br/>Я живу на в микро районе дражня г.Минска.<br/>Я пишу расказы,истории.<br/> 
+Ещё я что-то мастерю и хорошо рисую.<br/>И я учу Java.Script.  </p>
 		</div>
 
 		<div class="modal-footer">
@@ -122,7 +120,7 @@ function isNumeric(n) {
 function validateForm(formName, inputName, elementId) {
 	var enteredValue = document.forms[formName][inputName].value;
 	if (isNumeric(enteredValue) == false) {
-		document.getElementById(elementId).innerHTML = '<span class="label label-danger">Error!</span> <span>form incorrectly filled</span>';
+		document.getElementById(elementId).innerHTML = '<span class="label label-danger">Ошибка!</span> <span>форма неправильно заполнена</span>';
 		return false;
 	}
 	else {
@@ -133,7 +131,7 @@ function validateForm(formName, inputName, elementId) {
 function squarePerimeter() {
 	if (validateForm("square", "a", "squarePerimeter") == true) {
 		var a = getInputValue("square", "a");
-		document.getElementById("squarePerimeter").innerHTML = '<span class="label label-success">perimeter</span> is equal <code>' + Number(a) * 4 + '</code>';
+		document.getElementById("squarePerimeter").innerHTML = '<span class="label label-success">периметр</span> правильный <code>' + Number(a) * 4 + '</code>';
 	}
 }
 
@@ -146,7 +144,7 @@ function rectanglePerimeter() {
 		if(validateForm("rectangle", "b", "rectanglePerimeter") == true) {
 			var a = getInputValue("rectangle", "a");
 			var b = getInputValue("rectangle", "b");
-			document.getElementById("rectanglePerimeter").innerHTML = '<span class="label label-success">perimeter</span> is equal <code>' + (Number(a) + Number(b)) * 2 + '</code>';
+			document.getElementById("rectanglePerimeter").innerHTML = '<span class="label label-success">периметр</span> правильный  <code>' + (Number(a) + Number(b)) * 2 + '</code>';
 		}
 	}
 }
