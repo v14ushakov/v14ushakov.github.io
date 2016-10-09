@@ -87,6 +87,49 @@
 
 				</div><!-- row class end-->
 
+			<div class="row">
+					<div class="col-md-6 ">
+						<div class="panel panel-default">
+
+							<div class="panel-heading">
+								Калькулятор периметра треугольника
+								<span class="label label-default">p = a + b + c</span>
+							</div>
+
+							<div class="panel-body">
+								<form class="form-inline" name="triangle">
+									<div class="form-group">
+										<label>Длина первой стороны:</label>
+										<input class="form-control" placeholder="значение:" type="text" name="a">
+										<br />
+										<br />
+
+										<label>Длина второй стороны:</label>
+										<input class="form-control" placeholder="значение:" type="text" name="b">
+										<br />
+										<br />
+
+										<label>Длина третьей стороны:</label>
+										<input class="form-control" placeholder="значение:" type="text" name="c">
+										<br />
+										<br />
+
+										<button type='button' class="btn btn-default" onclick='trianglePerimeter()'>Вычислить:</button>
+										<button type="reset" class="btn btn-default" onclick='clearForm("trianglePerimeter")'>Очистить:</button>
+									</div>
+								</form>
+							</div> <!--panel-body end-->
+
+							<div class="panel-footer">
+								<span id="trianglePerimeter"></span>
+							</div>
+
+						</div><!--panel end-->
+
+					</div><!--column end-->
+				
+			</div>
+
 			</div> <!-- container class end-->
 
 <!-- Modal -->
@@ -131,7 +174,7 @@ function validateForm(formName, inputName, elementId) {
 function squarePerimeter() {
 	if (validateForm("square", "a", "squarePerimeter") == true) {
 		var a = getInputValue("square", "a");
-		document.getElementById("squarePerimeter").innerHTML = '<span class="label label-success">периметр</span> правильный <code>' + Number(a) * 4 + '</code>';
+		document.getElementById("squarePerimeter").innerHTML = '<span class="label label-success">периметр</span> равен <code>' + Number(a) * 4 + '</code>';
 	}
 }
 
@@ -144,9 +187,22 @@ function rectanglePerimeter() {
 		if(validateForm("rectangle", "b", "rectanglePerimeter") == true) {
 			var a = getInputValue("rectangle", "a");
 			var b = getInputValue("rectangle", "b");
-			document.getElementById("rectanglePerimeter").innerHTML = '<span class="label label-success">периметр</span> правильный  <code>' + (Number(a) + Number(b)) * 2 + '</code>';
+			document.getElementById("rectanglePerimeter").innerHTML = '<span class="label label-success">периметр</span> равен  <code>' + (Number(a) + Number(b)) * 2 + '</code>';
 		}
 	}
+}
+
+function trianglePerimeter() {
+	if(validateForm("triangle", "a", "trianglePerimeter")){
+		if(validateForm("triangle", "b", "trianglePerimeter")){
+			if(validateForm("triangle", "c", "trianglePerimeter")){
+				var a = getInputValue("triangle", "a");
+				var b = getInputValue("triangle", "b");
+				var c = getInputValue("triangle", "c");
+				document.getElementById("trianglePerimeter").innerHTML = '<span class="label label-success">периметр</span> равен <code>' + (Number(a) + Number(b) + Number(c)) + '</code>';
+			};
+		};
+	};
 }
 
 function clearForm(elementId) {
