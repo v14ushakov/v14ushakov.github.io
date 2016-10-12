@@ -1,136 +1,121 @@
 <!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf8">
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
 
-<html>
+<div class="container">
+	<div class="row">
+		<h1>
+			Примеры вычисления периметров:
+			<small data-toggle="modal" data-target="#myModal">Автор Ушаков Василий
+				<i class="fa fa-external-link" aria-hidden="true"></i>
+			</small>
+		</h1>
+		<hr>
 
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta charset="utf8">
+		<div class="col-md-6 ">
+			<div class="panel panel-default">
 
-		<link rel="stylesheet" href="bootstrap.min.css">
-		<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
-	</head>
-
-	<body>
-		<div class="container">
-
-			<div class="row">
-
-				<h1>
-					Примеры вычисления периметров:
-					<small data-toggle="modal" data-target="#myModal">Автор Ушаков Василий
-						<i class="fa fa-external-link" aria-hidden="true"></i>
-					</small>
-				</h1>
-				<hr>
-
-				<div class="col-md-6 ">
-					<div class="panel panel-default">
-
-						<div class="panel-heading">
-							Калькулятор периметра квадрата
-							<span class="label label-default">p = 4 * a</span>
-						</div>
-
-						<div class="panel-body">
-							<form class="form-inline" name="square">
-								<div class="form-group">
-									<label>длина стороны:</label>
-									<input class="form-control" placeholder="значение:" type="text" name="a">
-									<button type='button' class="btn btn-default" onclick='squarePerimeter("square", "a", "squarePerimeter")'>Вычислить:</button>
-									<button type="reset" class="btn btn-default" onclick='clearForm("squarePerimeter")'>Очистить:</button>
-								</div>
-							</form>
-						</div> <!--panel-body end-->
-
-						<div class="panel-footer">
-							<span id="squarePerimeter"></span>
-						</div>
-
-					</div><!--panel end-->
+				<div class="panel-heading">
+					Калькулятор периметра квадрата
+					<span class="label label-default">p = 4 * a</span>
 				</div>
 
+				<div class="panel-body">
+					<form class="form-inline" name="square">
+						<div class="form-group">
+							<label>длина стороны:</label>
+							<input class="form-control" placeholder="значение:" type="text" name="a">
+							<button type='button' class="btn btn-default" onclick='squarePerimeter("square", "a", "squarePerimeter")'>Вычислить:</button>
+							<button type="reset" class="btn btn-default" onclick='clearForm("squarePerimeter")'>Очистить:</button>
+						</div>
+					</form>
+				</div> <!--panel-body end-->
+
+				<div class="panel-footer">
+					<span id="squarePerimeter"></span>
+				</div>
+	</div><!--panel end-->
+</div>
 
 
-					<div class="col-md-6 ">
-						<div class="panel panel-default">
 
-							<div class="panel-heading">
-								Калькулятор периметра прямоугольника
-								<span class="label label-default">p = (a + b) * 2</span>
-							</div>
+	<div class="col-md-6 ">
+		<div class="panel panel-default">
 
-							<div class="panel-body">
-								<form class="form-inline" name="rectangle">
-									<div class="form-group">
-										<label>Длина прямоугольника:</label>
-										<input class="form-control" placeholder="значение:" type="text" name="a">
-										<br />
-										<br />
+		<div class="panel-heading">
+			Калькулятор периметра прямоугольника
+			<span class="label label-default">p = (a + b) * 2</span>
+		</div>
 
-										<label>Ширина прямоугольника:</label>
-										<input class="form-control" placeholder="значение:" type="text" name="b">
+		<div class="panel-body">
+			<form class="form-inline" name="rectangle">
+				<div class="form-group">
+					<label>Длина прямоугольника:</label>
+					<input class="form-control" placeholder="значение:" type="text" name="a">
+					<br />
+					<br />
 
-										<br />
-										<button type='button' class="btn btn-default" onclick='rectanglePerimeter()'>Вычислить:</button>
-										<button type="reset" class="btn btn-default" onclick='clearForm("rectanglePerimeter")'>Очистить:</button>
-									</div>
-								</form>
-							</div> <!--panel-body end-->
+					<label>Ширина прямоугольника:</label>
+					<input class="form-control" placeholder="значение:" type="text" name="b">
 
-							<div class="panel-footer">
-								<span id="rectanglePerimeter"></span>
-							</div>
+					<br />
+					<button type='button' class="btn btn-default" onclick='rectanglePerimeter()'>Вычислить:</button>
+					<button type="reset" class="btn btn-default" onclick='clearForm("rectanglePerimeter")'>Очистить:</button>
+				</div>
+			</form>
+		</div> <!--panel-body end-->
 
-						</div><!--panel end-->
-
-					</div><!--column end-->
-
-				</div><!-- row class end-->
-
-			<div class="row">
-					<div class="col-md-6 ">
-						<div class="panel panel-default">
-
-							<div class="panel-heading">
-								Калькулятор периметра треугольника
-								<span class="label label-default">p = a + b + c</span>
-							</div>
-
-							<div class="panel-body">
-								<form class="form-inline" name="triangle">
-									<div class="form-group">
-										<label>Длина первой стороны:</label>
-										<input class="form-control" placeholder="значение:" type="text" name="a">
-										<br />
-										<br />
-
-										<label>Длина второй стороны:</label>
-										<input class="form-control" placeholder="значение:" type="text" name="b">
-										<br />
-										<br />
-
-										<label>Длина третьей стороны:</label>
-										<input class="form-control" placeholder="значение:" type="text" name="c">
-										<br />
-										<br />
-
-										<button type='button' class="btn btn-default" onclick='trianglePerimeter()'>Вычислить:</button>
-										<button type="reset" class="btn btn-default" onclick='clearForm("trianglePerimeter")'>Очистить:</button>
-									</div>
-								</form>
-							</div> <!--panel-body end-->
-
-							<div class="panel-footer">
-								<span id="trianglePerimeter"></span>
-							</div>
-
-						</div><!--panel end-->
-
-					</div><!--column end-->
-				
+			<div class="panel-footer">
+				<span id="rectanglePerimeter"></span>
 			</div>
 
-			</div> <!-- container class end-->
+		</div><!--panel end-->
+	</div><!--column end-->
+</div><!-- row class end-->
+
+<div class="row">
+	<div class="col-md-6 ">
+		<div class="panel panel-default">
+
+			<div class="panel-heading">
+				Калькулятор периметра треугольника
+				<span class="label label-default">p = a + b + c</span>
+			</div>
+
+			<div class="panel-body">
+				<form class="form-inline" name="triangle">
+					<div class="form-group">
+						<label>Длина первой стороны:</label>
+						<input class="form-control" placeholder="значение:" type="text" name="a">
+						<br />
+						<br />
+
+						<label>Длина второй стороны:</label>
+						<input class="form-control" placeholder="значение:" type="text" name="b">
+						<br />
+						<br />
+
+						<label>Длина третьей стороны:</label>
+						<input class="form-control" placeholder="значение:" type="text" name="c">
+						<br />
+						<br />
+
+						<button type='button' class="btn btn-default" onclick='trianglePerimeter()'>Вычислить:</button>
+						<button type="reset" class="btn btn-default" onclick='clearForm("trianglePerimeter")'>Очистить:</button>
+					</div>
+				</form>
+			</div> <!--panel-body end-->
+
+			<div class="panel-footer">
+				<span id="trianglePerimeter"></span>
+			</div>
+
+		</div><!--panel end-->
+	</div><!--column end-->
+</div>
+</div> <!-- container class end-->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal">
@@ -155,7 +140,7 @@
 			<script src="jquery.min.js"></script>
 			<script src="bootstrap.min.js"></script>
 
-			<script>
+<script>
 function isNumeric(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 }
